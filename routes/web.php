@@ -16,7 +16,7 @@ use App\Http\Controllers\PrincipalController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 Route::get('index',[PrincipalController::class,'index'])->name('index');

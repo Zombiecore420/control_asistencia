@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <title>Sistema Control De Asistencias </title>
     <!-- icono de la pestaña -->
-    <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico')}}">
+    <link rel="shortcut icon" href="{{ asset('assets/images/logooxd.ico')}}">
     <!-- inicia css -->
     <link href="{{ asset('assets/plugins/switchery/switchery.min.css')}}" rel="stylesheet">
     <link href="{{ asset('assets/plugins/jvectormap/jquery-jvectormap-2.0.2.css')}}" rel="stylesheet">
