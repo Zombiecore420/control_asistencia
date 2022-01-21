@@ -1,7 +1,6 @@
-
- @section('content_header')
- <h4> Bienvenido Inicio de sistema </h4>
- @stop
+@section('content_header')
+<h4> Inicio </h4>
+@stop
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,14 +14,11 @@
     <meta name="author" content="Themesbox17">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <title>Sistema Control De Asistencias </title>
-    <!-- Fevicon -->
+    <!-- icono de la pestaña -->
     <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico')}}">
-    <!-- Start css -->
-    <!-- Switchery css -->
+    <!-- inicia css -->
     <link href="{{ asset('assets/plugins/switchery/switchery.min.css')}}" rel="stylesheet">
-    <!-- jvectormap css -->
     <link href="{{ asset('assets/plugins/jvectormap/jquery-jvectormap-2.0.2.css')}}" rel="stylesheet">
-    <!-- Datepicker css -->
     <link href="{{asset ('assets/plugins/datepicker/datepicker.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset ('assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset ('assets/css/icons.css')}}" rel="stylesheet" type="text/css">
@@ -45,20 +41,14 @@
                         <img src="{{ asset('assets/images/lol.jpeg') }}" class="img-fluid" alt="logo">
                         <br>
                         <br>   
-                        <span > CARPE DIEM MÉXICO
-                           
-                        </span>
-                 
-
-                    </a>
+                        <span > CARPE DIEM MÉXICO</span>
+                   
                     <b> <p>Centro de Capacitación Evaluación y Certificación Laboral </p></b>
+                </a>
                     <a href="index.html" class="logo logo-small"><img src="{{ asset('assets/images/logosm.png') }}" class="img-fluid" alt="logo"></a>
-                
                 </div>
                 <!-- final de logo empresa -->
-
-                <!-- Start Profilebar -->
-               
+                <!-- inicia Profilebar -->
                 <div class="navigationbar">
                     <ul class="vertical-menu">
                         <li class="vertical-header">Principal</li>
@@ -107,7 +97,6 @@
                 </div>
                 <!-- End Profilebar -->
                 <!-- Start Navigationbar -->
-                
                 <!-- End Navigationbar -->
             </div>
             <!-- End Sidebar -->
@@ -120,7 +109,7 @@
                 <div class="row align-items-center">
                     <div class="col-md-12">
                         <div class="mobile-logobar">
-                            <a href="index.html" class="mobile-logo"><img src="{{ asset('assets/images/logo.svg') }}" class="img-fluid" alt="logo"></a>
+                            <a href="index.html" class="mobile-logo"><img src="{{ asset('assets/images/logoxd.JPG') }}" class="img-fluid" alt="logo"></a>
                         </div>
                         <div class="mobile-togglebar">
                             <ul class="list-inline mb-0">
@@ -173,13 +162,10 @@
                                         </form>
                                     </div> 
                                 </li> 
-                               
                             </ul>
-                            
                         </div>
                         
                         <div class="infobar">
-                            
                             <li class="list-inline-item">
                                 <div class="dropdown">
                                   <a class="dropdown-toggle" href="#" role="button" id="profilelink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-user" alt="profile"></i><span class="feather icon-chevron-down live-icon"></span></a>
@@ -234,6 +220,7 @@
                         </div>  
                     </div>
                 </div>
+                <!--Fin de contenido de pagina-->
             <div class="footerbar">
                 <footer class="footer">
                     <p class="mb-0">© 2022 - Carpe Diem México Derechos Reservados.</p>
@@ -268,6 +255,4 @@
     <script src="{{ asset('assets/js/core.js') }}"></script>
     <!-- End js -->
 </body>
-
-<!-- Mirrored from themesbox.in/admin-templates/theta/html/light-vertical/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 19 Jan 2022 20:00:37 GMT -->
 </html>
