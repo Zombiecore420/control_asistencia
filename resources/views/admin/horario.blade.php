@@ -75,6 +75,7 @@
               </tbody>
             </table>
 
+       
             <!-- Modal Crear Horario-->
           <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -85,116 +86,78 @@
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
+
+             
+
                 <div class="modal-body">
-                  <form>
+                  <form method="POST" action="{{  route('guardarhorario') }}" class="form-horizontal m-t-30" enctype="multipart/form-data">
+                    {{ csrf_field() }} 
+
+            
+
                     <div class="form-group">
                       <label for="a">Nombre Horario</label>
-                      <input type="text" class="form-control" id="a" aria-describedby="emailHelp" placeholder="Ejemplo: Matutino">
+                      <input type="text" class="form-control"  name="nombre_horario[]" placeholder="Ejemplo: Matutino">
                       <small id="" class="form-text text-muted">Ingresa el nombre del horario.</small>
-                      <div class="form-radio">
-                      <br>
-                      <input type="radio" class="form-radio-input" id="exampleCheck1">
-                      <label class="form-radio-label" for="exampleCheck1">Lunes</label>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-checkbox">
+                        <input type="checkbox" class="form-checkbox-input" id="nombre_d"  name="nombre_dia[]" value="Lunes">
+                        <label class="form-checkbox-label" for="exampleCheck1">Lunes</label>
+                        <div class="row">
+                          <div class="col">
+                            <input type="time" class="form-control" name="hora_entrada[]"  placeholder="9:00 AM">
+                          </div>
+                          <P> - </P>
+                          <div class="col">
+                            <input type="time" class="form-control"  name="hora_salida[]" placeholder="17:00 PM">
+                          </div>
+                        </div>
+                    </div>
+                  
+                    
+                    <div class="form-group">
+                      <div class="form-checkbox">
+                      <input type="checkbox" class="form-checkbox-input" id="nombre_d" name="nombre_dia[]" value="Martes">
+                      <label class="form-checkbox-label" for="exampleCheck1">Martes</label>
                       <div class="row">
                         <div class="col">
-                          <input type="time" class="form-control" placeholder="9:00 AM">
+                          <input type="time" class="form-control" name="hora_entrada[]"  placeholder="9:00 AM">
                         </div>
                         <P> - </P>
                         <div class="col">
-                          <input type="time" class="form-control" placeholder="17:00 PM">
+                          <input type="time" class="form-control"  name="hora_salida[]" placeholder="17:00 PM">
                         </div>
                       </div>
                     </div>
-                    <div class="form-radio">
-                      <br>
-                      <input type="radio" class="form-radio-input" id="exampleCheck1">
-                      <label class="form-radio-label" for="exampleCheck1">Martes</label>
-                      <div class="row">
-                        <div class="col">
-                          <input type="time" class="form-control" placeholder="9:00 AM">
-                        </div>
-                        <P> - </P>
-                        <div class="col">
-                          <input type="time" class="form-control" placeholder="17:00 PM">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="form-radio">
-                      <br>
-                      <input type="radio" class="form-radio-input" id="exampleCheck1">
-                      <label class="form-radio-label" for="exampleCheck1">Miercoles</label>
-                      <div class="row">
-                        <div class="col">
-                          <input type="time" class="form-control" placeholder="9:00 AM">
-                        </div>
-                        <P> - </P>
-                        <div class="col">
-                          <input type="time" class="form-control" placeholder="17:00 PM">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="form-radio">
-                      <br>
-                      <input type="radio" class="form-radio-input" id="exampleCheck1">
-                      <label class="form-radio-label" for="exampleCheck1">Jueves</label>
-                      <div class="row">
-                        <div class="col">
-                          <input type="time" class="form-control" placeholder="9:00 AM">
-                        </div>
-                        <P> - </P>
-                        <div class="col">
-                          <input type="time" class="form-control" placeholder="17:00 PM">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="form-radio">
-                      <br>
-                      <input type="radio" class="form-radio-input" id="exampleCheck1">
-                      <label class="form-radio-label" for="exampleCheck1">Viernes</label>
-                      <div class="row">
-                        <div class="col">
-                          <input type="time" class="form-control" placeholder="9:00 AM">
-                        </div>
-                        <P> - </P>
-                        <div class="col">
-                          <input type="time" class="form-control" placeholder="17:00 PM">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="form-radio">
-                      <br>
-                      <input type="radio" class="form-radio-input" id="exampleCheck1">
-                      <label class="form-radio-label" for="exampleCheck1">Sabado</label>
-                      <div class="row">
-                        <div class="col">
-                          <input type="time" class="form-control" placeholder="9:00 AM">
-                        </div>
-                        <P> - </P>
-                        <div class="col">
-                          <input type="time" class="form-control" placeholder="17:00 PM">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="form-radio">
-                      <br>
-                      <input type="radio" class="form-radio-input" id="exampleCheck1">
-                      <label class="form-radio-label" for="exampleCheck1">Domingo</label>
-                      <div class="row">
-                        <div class="col">
-                          <input type="time" class="form-control" placeholder="9:00 AM">
-                        </div>
-                        <P> - </P>
-                        <div class="col">
-                          <input type="time" class="form-control" placeholder="17:00 PM">
-                        </div>
-                      </div>
+                  
+                    <input type="text" name="diass" style="display:none"  id="diass" value="">
+                    
+
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+
+                      <button type="button" id="enviar" class="btn btn-success">Guardar</button>
+
+                      <button type="submit" style="display:none" id="send" class="btn btn-success">Guardar</button>
+
                     </div>
                   </form>
+
+                  <div class="form-group col-md-12"> 
+                    @php
+                      $success = Session::get('success');
+                    @endphp
+                    @if($success)
+                    <div class="alert alert-success">{{ $success }}</div>
+                    @endif
+                  </div>
+
+                
+                  
                 </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                  <button type="button" class="btn btn-success">Guardar</button>
-                </div>
+               
               </div>
             </div>
           </div>
@@ -265,10 +228,10 @@
                     <div class="form-group">
                       <label for="a">Nombre Horario</label>
                       <input type="text" class="form-control" id="a" aria-describedby="emailHelp" readonly placeholder="Matutino">
-                      <div class="form-radio">
+                      <div class="form-checkbox">
                       <br>
-                      <input type="radio" class="form-radio-input" id="exampleCheck1">
-                      <label class="form-radio-label" for="exampleCheck1">Lunes</label>
+                      <input type="checkbox" class="form-checkbox-input" id="exampleCheck1">
+                      <label class="form-checkbox-label" for="exampleCheck1">Lunes</label>
                       <div class="row">
                         <div class="col">
                           <input type="time" class="form-control" placeholder="9:00 AM">
@@ -279,10 +242,10 @@
                         </div>
                       </div>
                     </div>
-                    <div class="form-radio">
+                    <div class="form-checkbox">
                       <br>
-                      <input type="radio" class="form-radio-input" id="exampleCheck1">
-                      <label class="form-radio-label" for="exampleCheck1">Martes</label>
+                      <input type="checkbox" class="form-checkbox-input" id="exampleCheck1">
+                      <label class="form-checkbox-label" for="exampleCheck1">Martes</label>
                       <div class="row">
                         <div class="col">
                           <input type="time" class="form-control" placeholder="9:00 AM">
@@ -293,10 +256,10 @@
                         </div>
                       </div>
                     </div>
-                    <div class="form-radio">
+                    <div class="form-checkbox">
                       <br>
-                      <input type="radio" class="form-radio-input" id="exampleCheck1">
-                      <label class="form-radio-label" for="exampleCheck1">Miercoles</label>
+                      <input type="checkbox" class="form-checkbox-input" id="exampleCheck1">
+                      <label class="form-checkbox-label" for="exampleCheck1">Miercoles</label>
                       <div class="row">
                         <div class="col">
                           <input type="time" class="form-control" placeholder="9:00 AM">
@@ -307,10 +270,10 @@
                         </div>
                       </div>
                     </div>
-                    <div class="form-radio">
+                    <div class="form-checkbox">
                       <br>
-                      <input type="radio" class="form-radio-input" id="exampleCheck1">
-                      <label class="form-radio-label" for="exampleCheck1">Jueves</label>
+                      <input type="checkbox" class="form-checkbox-input" id="exampleCheck1">
+                      <label class="form-checkbox-label" for="exampleCheck1">Jueves</label>
                       <div class="row">
                         <div class="col">
                           <input type="time" class="form-control" placeholder="9:00 AM">
@@ -321,10 +284,10 @@
                         </div>
                       </div>
                     </div>
-                    <div class="form-radio">
+                    <div class="form-checkbox">
                       <br>
-                      <input type="radio" class="form-radio-input" id="exampleCheck1">
-                      <label class="form-radio-label" for="exampleCheck1">Viernes</label>
+                      <input type="checkbox" class="form-checkbox-input" id="exampleCheck1">
+                      <label class="form-checkbox-label" for="exampleCheck1">Viernes</label>
                       <div class="row">
                         <div class="col">
                           <input type="time" class="form-control" placeholder="9:00 AM">
@@ -335,10 +298,10 @@
                         </div>
                       </div>
                     </div>
-                    <div class="form-radio">
+                    <div class="form-checkbox">
                       <br>
-                      <input type="radio" class="form-radio-input" id="exampleCheck1">
-                      <label class="form-radio-label" for="exampleCheck1">Sabado</label>
+                      <input type="checkbox" class="form-checkbox-input" id="exampleCheck1">
+                      <label class="form-checkbox-label" for="exampleCheck1">Sabado</label>
                       <div class="row">
                         <div class="col">
                           <input type="time" class="form-control" placeholder="9:00 AM">
@@ -349,10 +312,10 @@
                         </div>
                       </div>
                     </div>
-                    <div class="form-radio">
+                    <div class="form-checkbox">
                       <br>
-                      <input type="radio" class="form-radio-input" id="exampleCheck1">
-                      <label class="form-radio-label" for="exampleCheck1">Domingo</label>
+                      <input type="checkbox" class="form-checkbox-input" id="exampleCheck1">
+                      <label class="form-checkbox-label" for="exampleCheck1">Domingo</label>
                       <div class="row">
                         <div class="col">
                           <input type="time" class="form-control" placeholder="9:00 AM">
@@ -378,5 +341,17 @@
       </div>
     </div>
   </div>
+
+  <script>
+    document.getElementById('enviar').onclick = function(){
+      var dias = $('input:checkbox:checked').length
+      var gg = document.getElementById('diass');
+      gg.value = dias
+      document.getElementById('send').click()
+      if(gg > 0 ){
+      }console.log(gg);
+    }
+  </script>
+
 
 @stop

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PrincipalController;
+use App\Http\Controllers\AsistenciaController;
 
 
 /*
@@ -20,7 +21,11 @@ Route::get('/', function () {
 });
 
 Route::get('index',[PrincipalController::class,'index'])->name('index');
-
 Route::get('admin/horario',[PrincipalController::class,'horario'])->name('horario');
-
 Route::get('admin/empleados',[PrincipalController::class,'empleados'])->name('empleados');
+
+
+Route::get('altahorario',[AsistenciaController::class,'altahorario'])->name('altahorario');
+Route::post('guardarhorario',[AsistenciaController::class,'guardarhorario'])->name('guardarhorario');
+Route::get('admin/reportehorario',[AsistenciaController::class,'reportehorario'])->name('reportehorario');
+
