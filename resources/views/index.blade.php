@@ -21,10 +21,9 @@
     <link href="{{ asset('assets/plugins/jvectormap/jquery-jvectormap-2.0.2.css')}}" rel="stylesheet">
     <link href="{{asset ('assets/plugins/datepicker/datepicker.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset ('assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
-    <link href="{{asset ('assets/css/icons.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset ('assets/css/icons.css')}}" rel="stylesheet" type="teaxt/css">
     <link href="{{asset ('assets/css/flag-icon.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset ('assets/css/style.css')}}" rel="stylesheet" type="text/css">
-    
     @stack('horarios-style')
     <!-- fin de cabecera  -->
 </head>
@@ -59,40 +58,30 @@
                             
                         </li>
                         <li>
-                            <a href="{{ url('admin/horario') }}">
+                            <a href="#">
                                 <i class="ti-alarm-clock"  class="img-fluid" alt="layouts"></i><span>Horarios</span><i class="feather icon-chevron-right pull-right"></i>
                             </a>
-                           
-                        </li>
-                        <li>
-                            <a href="javaScript:void();">
-                              <i class="ti-book" class="img-fluid" alt="layouts"></i><span>Informes</span><i class="feather icon-chevron-right pull-right"></i>
-                            </a>
                             <ul class="vertical-submenu">
-                                <li><a href="apps-calender.html"><i class="mdi mdi-circle"></i>Calender</a></li>
-                                <li><a href="apps-chat.html"><i class="mdi mdi-circle"></i>Chat</a></li> 
-                                <li>
-                                    <a href="javaScript:void();"><i class="mdi mdi-circle"></i>Email<i class="feather icon-chevron-right pull-right"></i></a>
-                                    <ul class="vertical-submenu">
-                                        <li><a href="apps-email-inbox.html"><i class="mdi mdi-circle"></i>Email Inbox</a></li>
-                                        <li><a href="apps-email-open.html"><i class="mdi mdi-circle"></i>Email Open</a></li>
-                                        <li><a href="apps-email-compose.html"><i class="mdi mdi-circle"></i>Email Compose</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="apps-kanban-board.html"><i class="mdi mdi-circle"></i>Kanban Board</a></li>
-                                <li><a href="apps-onboarding-screens.html"><i class="mdi mdi-circle"></i>Onboarding Screens</a></li>
+                                <li><a href="{{ url('admin/horarios') }}"><i class="mdi mdi-circle"></i>Horarios Fijos</a></li>
+                                <li><a href="{{ url('admin/horariosf') }}"><i class="mdi mdi-circle"></i>Horarios Flexibles</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="widgets.html">
+                            <a href="{{ url('admin/informes') }}">
+                              <i class="ti-book" class="img-fluid" alt="layouts"></i><span>Informes</span><i class="feather icon-chevron-right pull-right"></i>
+                            </a>
+                        
+                        </li>
+                        <li>
+                            <a href="{{ url('admin/calendario') }}">
                                 <i class="ti-calendar" class="img-fluid" alt="widgets"></i><span>Calendario</span><i class="feather icon-chevron-right pull-right"></i></a>
                             </a>
                         </li>
                         <li>
-                            <a href="widgets.html">
+                            <a href="{{ url('admin/solicitud') }}">
                                 <i class="ti-write" class="img-fluid" alt="widgets"></i><span>Solicitudes</span><i class="feather icon-chevron-right pull-right"></i></a>
                             </a>
-                        </li>                                   
+                        </li>                                     
                     </ul>
                 </div>
                 <!-- End Profilebar -->
@@ -215,7 +204,7 @@
                                 <h5 class="card-title">@yield('content_header')</h5>
                                 </div>
                                 @yield('contenido')
-                                <div class="card-body">                         
+                                <div class="card-body">                      
                             </div>
                         </div>  
                     </div>
@@ -233,10 +222,12 @@
     <!-- End Containerbar -->
     <!-- Start js -->        
     <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+  
     <script src="{{ asset('assets/js/popper.min.js') }}"></script>
     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('assets/js/modernizr.min.js') }}"></script>
     <script src="{{ asset('assets/js/detect.js') }}"></script>
+
     <script src="{{ asset('assets/js/jquery.slimscroll.js') }}"></script>
     <script src="{{ asset('assets/js/vertical-menu.js') }}"></script>
     <!-- Switchery js -->
