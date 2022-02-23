@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HrFlexController;
 use App\Http\Controllers\HorarioController;
 use App\Http\Controllers\HorariofController;
 use App\Http\Controllers\PrincipalController;
@@ -27,7 +28,7 @@ Route::get('/', function () {
 Route::get('index',[PrincipalController::class,'index'])->name('index');
 Route::get('admin/empleados',[PrincipalController::class,'empleados'])->name('empleados');
 Route::get('admin/horarios',[PrincipalController::class,'horarios'])->name('horarios');
-
+Route::get('admin/hrflex',[PrincipalController::class,'hrflex'])->name('hrflex');
 Route::get('admin/solicitud',[PrincipalController::class,'solicitud'])->name('solicitud');
 Route::get('admin/informes',[PrincipalController::class,'informes'])->name('informes');
 Route::get('admin/calendario',[PrincipalController::class,'calendario'])->name('calendario');
@@ -48,6 +49,6 @@ Route::get('modificarh/{id_horario}', [HorarioController::class, 'modificarh'])-
 Route::post('guardarcambioh', [HorarioController::class, 'guardarcambioh'])->name('guardarcambioh'); //Guarda el registro de horarios
 
 // rutas para horarios flexibles
-Route::get('altahorariof',[HorariofController::class,'altahorariof'])->name('altahorariof');
-Route::post('guardarhorariof',[HorariofController::class,'guardarhorariof'])->name('guardarhorariof');
-Route::get('admin/horariosf',[HorariofController::class,'reportehorariof'])->name('horariosf');
+Route::get('altahrflex',[HrFlexController::class,'altahrflex'])->name('altahrflex');
+Route::post('guardarhrflex',[HrFlexController::class,'guardarhrflex'])->name('guardarhrflex');
+Route::get('admin/hrflex',[HrFlexController::class,'reportehrflex'])->name('hrflex');

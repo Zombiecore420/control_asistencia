@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class diasfs extends Model
+class hrflex extends Model
 {
+  
     use SoftDeletes;
 
-    protected $table = 'diasfs';
-    protected $primaryKey = 'id_horariof';
-    protected $fillable = ['nombre_diaf','nombre_horariof', 'hora_entradaf','hora_salidaf'];
+    protected $table = 'hrflexes';
+    protected $primaryKey = 'id_horario';
+    protected $fillable = ['nombre_dia','nombre_horario', 'hora_entrada','hora_salida'];
     public $timestamps = false;
     protected $dates = ['deleted_at'];
-
 }

@@ -33,4 +33,7 @@ class PrincipalController extends Controller
     public function calendario(){
         return view ('admin.calendario');
     }
+    public function hrflex(){
+        return view ('admin.hrflex');
+    }
 }
