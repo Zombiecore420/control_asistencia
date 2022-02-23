@@ -52,3 +52,8 @@ Route::post('guardarcambioh', [HorarioController::class, 'guardarcambioh'])->nam
 Route::get('altahrflex',[HrFlexController::class,'altahrflex'])->name('altahrflex');
 Route::post('guardarhrflex',[HrFlexController::class,'guardarhrflex'])->name('guardarhrflex');
 Route::get('admin/hrflex',[HrFlexController::class,'reportehrflex'])->name('hrflex');
+
+//Operaciones
+Route::get('desactivarhrflex/{id_horario}', [HrFlexController::class, 'desactivarhrflex'])->name('desactivarhrflex');        //Desactiva horarios
+Route::get('activarhrflex/{id_horario}', [HrFlexController::class, 'activarhrflex'])->name('activarhrflex');        //Activa horarios
+Route::get('eliminarhrflex/{id_horario}', [HrFlexController::class, 'eliminarhrflex'])->name('eliminarhrflex'); 

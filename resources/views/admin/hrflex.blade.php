@@ -32,6 +32,7 @@
     <table class="table table-hover table-responsive-xl">
       <thead>
           <tr>
+            <th scope="col" style="text-align: center">#</th>
               <th scope="col" style="text-align: center">Nombre del horario</th>
               <th scope="col" style="text-align: center">Dia</th>
               <th scope="col" style="text-align: center">Hora entrada</th>
@@ -42,26 +43,27 @@
       <tbody>
       @foreach($ab as $abb)
           <tr>
+            <td style="text-align: center">{{$abb-> id_horario }}</td>
               <td style="text-align: center">{{$abb-> nombre_horario }}</td>
               <td style="text-align: center">{{$abb-> nombre_dia}}</td>
               <td style="text-align: center">{{$abb-> hora_entrada}}</td>
               <td style="text-align: center">{{$abb-> hora_salida}}</td>
               <td style="text-align: center">    
                   <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <a href="#">
-                      <button class="btn btn-outline-primary btn-sm" type="button" style="margin-right 10px">Editar</button>
-                      </a>
-                      <a href="#">
+                    @if($abb->deleted_at)  
+                      <a href="{{route('activarhrflex',['id_horario' => $abb->id_horario])}}">
                       <button class="btn btn-outline-info btn-sm" type="button" style="margin-right 10px">
                       Activar
                       </button>
                       </a>
-                      <a href="#">
+                      <a href="{{route('eliminarhrflex',['id_horario' => $abb->id_horario])}}">
                       <button class="btn btn-outline-danger btn-sm" type="button">Eliminar</button>
                       </a>
-                      <a href="#">
+                      @else 
+                      <a href="{{route('desactivarhrflex',['id_horario' => $abb->id_horario])}}">
                       <button class="btn btn-outline-warning btn-sm" type="button" style="margin-right 10px">Desactivar</button>
                       </a>
+                      @endif
                   </div> 
               </td>
           </tr>
@@ -223,7 +225,7 @@
             <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Horario:</label>
             <select class="form-control" id="exampleFormControlSelect2">
               <option selected>Selecciona una opción...</option>
-              <option value="1">Matutsino</option>
+              <option value="1">Matutino</option>
               <option value="2">Vespertino</option>
               <option value="3">Mixto</option>
             </select> 
