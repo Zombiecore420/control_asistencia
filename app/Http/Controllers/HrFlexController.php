@@ -45,7 +45,7 @@ class HrFlexController extends Controller
             ];
            DB::table('hrflexes')->insert($datasave);
        }
-     
+       Session::flash('mensaje', 'El horario: ha sido agredado correctamente.');
        return redirect()->route('hrflex');
    }
    public function reportehrflex(){
